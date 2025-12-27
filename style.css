@@ -2,21 +2,21 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
 
 body {
-  background: #f5f7fb;
+  background: #f4f6fb;
   color: #222;
 }
 
-/* Navbar */
+/* NAV */
 .navbar {
-  background: #1f4e8c;
-  color: white;
+  background: #0b3c6d;
+  color: #fff;
   display: flex;
   justify-content: space-between;
-  padding: 15px 40px;
+  padding: 16px 40px;
 }
 
 .navbar ul {
@@ -28,34 +28,44 @@ body {
 .navbar a {
   color: white;
   text-decoration: none;
+  font-weight: 500;
 }
 
-/* Hero */
+/* HERO */
 .hero {
-  background: #245da8;
+  background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
+              url("images/durum.jpg") center/cover;
   color: white;
   text-align: center;
-  padding: 80px 20px;
+  padding: 100px 20px;
 }
 
-.hero button {
-  margin-top: 20px;
-  padding: 12px 25px;
-  border: none;
+.btn {
   background: #e53935;
   color: white;
-  border-radius: 20px;
-  cursor: pointer;
+  padding: 14px 30px;
+  border-radius: 25px;
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
 }
 
-/* Menu */
+/* MENU */
 .menu {
-  padding: 50px;
+  padding: 60px 40px;
+}
+
+.menu h2 {
   text-align: center;
+  margin-bottom: 30px;
+}
+
+.menu h3 {
+  margin: 40px 0 20px;
+  color: #0b3c6d;
 }
 
 .menu-grid {
-  margin-top: 30px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
@@ -63,27 +73,32 @@ body {
 
 .card {
   background: white;
-  padding: 20px;
-  border-radius: 8px;
-  text-align: left;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.card span {
-  font-size: 12px;
-  color: #e53935;
-}
-
-/* About */
-.about {
-  background: white;
-  padding: 60px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   text-align: center;
 }
 
-/* Visit */
-.visit {
-  padding: 60px;
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card h4 {
+  margin: 10px 0;
+}
+
+.card p {
+  color: #e53935;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* ABOUT & VISIT */
+.about, .visit {
+  background: white;
+  padding: 60px 40px;
   text-align: center;
 }
 
@@ -94,15 +109,9 @@ body {
   gap: 20px;
 }
 
-.visit-card {
-  background: white;
-  padding: 25px;
-  border-radius: 8px;
-}
-
-/* Footer */
+/* FOOTER */
 footer {
-  background: #1f4e8c;
+  background: #0b3c6d;
   color: white;
   text-align: center;
   padding: 15px;
