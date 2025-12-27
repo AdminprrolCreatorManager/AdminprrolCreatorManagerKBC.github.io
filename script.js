@@ -1,4 +1,2 @@
-// Simple interaction example
-document.querySelector("button").addEventListener("click", () => {
-  alert("Online ordering coming soon!");
-});
+// Ready for future features (online orders, modal menu, etc.)
+console.log("Kebab Cavaleri website loaded");
