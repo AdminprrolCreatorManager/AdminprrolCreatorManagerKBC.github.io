@@ -34,7 +34,7 @@ body {
 /* HERO */
 .hero {
   background: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
-              url("images/durum.jpg") center/cover;
+              url("images/headline.jpg") center/cover;
   color: white;
   text-align: center;
   padding: 100px 20px;
@@ -116,3 +116,4 @@ footer {
   text-align: center;
   padding: 15px;
 }
+
