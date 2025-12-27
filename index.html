@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <title>Kebab Cavaleri</title>
@@ -7,83 +7,100 @@
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="logo">Kebab Cavaleri</div>
-    <ul>
-      <li><a href="#">Menu</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">KEBAB CAVALERI</div>
+  <ul>
+    <li><a href="#menu">Menú</a></li>
+    <li><a href="#about">Nosotros</a></li>
+    <li><a href="#visit">Contacto</a></li>
+  </ul>
+</nav>
 
-  <!-- Hero -->
-  <header class="hero">
-    <h1>Authentic Kebabs & Durums</h1>
-    <p>Freshly prepared with the finest ingredients and traditional recipes</p>
-    <button>Order Now</button>
-  </header>
+<!-- HERO -->
+<header class="hero">
+  <h1>Kebabs & Durums Auténticos</h1>
+  <p>Sabores mediterráneos · Ingredientes frescos · 100% Halal</p>
+  <a href="#menu" class="btn">Ver Menú</a>
+</header>
 
-  <!-- Menu -->
-  <section class="menu">
-    <h2>Our Menu</h2>
+<!-- MENU -->
+<section id="menu" class="menu">
+  <h2>Nuestro Menú</h2>
 
-    <div class="menu-grid">
-      <div class="card"><span>Durum</span><h3>Durum Especial</h3><p>5.00€</p></div>
-      <div class="card"><span>Durum</span><h3>Durum Super</h3><p>6.00€</p></div>
-      <div class="card"><span>Durum</span><h3>Durum Cavaleri</h3><p>6.00€</p></div>
+  <!-- DURUMS -->
+  <h3>Durums (Enrollados)</h3>
+  <div class="menu-grid">
+    <div class="card"><img src="images/durum.jpg"><h4>Durum Especial</h4><p>5,00€</p></div>
+    <div class="card"><img src="images/durum.jpg"><h4>Durum Super</h4><p>6,00€</p></div>
+    <div class="card"><img src="images/durum.jpg"><h4>Durum Cavaleri</h4><p>6,00€</p></div>
+    <div class="card"><img src="images/durum.jpg"><h4>Durum Strogo</h4><p>5,00€</p></div>
+    <div class="card"><img src="images/durum.jpg"><h4>Durum Falafel</h4><p>5,00€</p></div>
+    <div class="card"><img src="images/durum.jpg"><h4>Durum Simple</h4><p>6,00€</p></div>
+  </div>
 
-      <div class="card"><span>Durum</span><h3>Durum Strogo</h3><p>5.00€</p></div>
-      <div class="card"><span>Durum</span><h3>Durum Falafel</h3><p>5.00€</p></div>
-      <div class="card"><span>Durum</span><h3>Durum Simple</h3><p>6.00€</p></div>
+  <!-- KEBABS -->
+  <h3>Kebabs (Pan Pita)</h3>
+  <div class="menu-grid">
+    <div class="card"><img src="images/kebab.jpg"><h4>Kebab Especial</h4><p>5,00€</p></div>
+    <div class="card"><img src="images/kebab.jpg"><h4>Kebab Super</h4><p>6,00€</p></div>
+    <div class="card"><img src="images/kebab.jpg"><h4>Kebab Cavaleri</h4><p>6,00€</p></div>
+    <div class="card"><img src="images/kebab.jpg"><h4>Kebab Falafel</h4><p>5,00€</p></div>
+    <div class="card"><img src="images/kebab.jpg"><h4>Kebab Simple</h4><p>6,00€</p></div>
+  </div>
 
-      <div class="card"><span>Kebab</span><h3>Kebab Especial</h3><p>5.00€</p></div>
-      <div class="card"><span>Kebab</span><h3>Kebab Super</h3><p>6.00€</p></div>
-      <div class="card"><span>Kebab</span><h3>Kebab Cavaleri</h3><p>6.00€</p></div>
+  <!-- MENÚS -->
+  <h3>Menús</h3>
+  <div class="menu-grid">
+    <div class="card"><img src="images/menu.jpg"><h4>Menú Durum</h4><p>7,50€</p></div>
+    <div class="card"><img src="images/menu.jpg"><h4>Menú Kebab</h4><p>7,50€</p></div>
+    <div class="card"><img src="images/menu.jpg"><h4>Menú Lahmacun</h4><p>8,00€</p></div>
+    <div class="card"><img src="images/menu.jpg"><h4>Menú Hamburguesa</h4><p>6,50€</p></div>
+  </div>
 
-      <div class="card"><span>Menus</span><h3>Menu Durum</h3><p>7.50€</p></div>
-      <div class="card"><span>Menus</span><h3>Menu Kebab</h3><p>7.50€</p></div>
-      <div class="card"><span>Menus</span><h3>Menu Lahmacun</h3><p>8.00€</p></div>
+  <!-- EXTRAS -->
+  <h3>Extras</h3>
+  <div class="menu-grid">
+    <div class="card"><img src="images/fries.jpg"><h4>Patatas Fritas</h4><p>2,00€ – 4,00€</p></div>
+    <div class="card"><img src="images/fries.jpg"><h4>Alitas de Pollo</h4><p>6,50€</p></div>
+    <div class="card"><img src="images/fries.jpg"><h4>Nuggets</h4><p>5,00€</p></div>
+    <div class="card"><img src="images/fries.jpg"><h4>Salsa Extra</h4><p>0,50€</p></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <h2>Sobre Kebab Cavaleri</h2>
+  <p>
+    En Kebab Cavaleri ofrecemos auténtica comida mediterránea con ingredientes
+    frescos y recetas tradicionales. Todos nuestros productos incluyen salsa blanca
+    y salsa roja.
+  </p>
+</section>
+
+<!-- VISIT -->
+<section id="visit" class="visit">
+  <h2>Visítanos</h2>
+  <div class="visit-grid">
+    <div>
+      <h4>📍 Dirección</h4>
+      <p>Avda. de Andalucía 204<br>Coria del Río (Sevilla)</p>
     </div>
-  </section>
-
-  <!-- About -->
-  <section class="about">
-    <h2>About Kebab Cavaleri</h2>
-    <p>
-      Kebab Cavaleri brings authentic Mediterranean flavors to your table with
-      fresh, carefully selected ingredients. Each dish is prepared to perfection
-      using traditional recipes and modern convenience.
-    </p>
-  </section>
-
-  <!-- Visit Us -->
-  <section class="visit">
-    <h2>Visit Us</h2>
-
-    <div class="visit-grid">
-      <div class="visit-card">
-        <h3>📍 Location</h3>
-        <p>Avenida de Andalucía 204<br>Cádiz de la Frontera, Sevilla</p>
-      </div>
-
-      <div class="visit-card">
-        <h3>🕒 Hours</h3>
-        <p>Daily<br>12:00 PM – 1:00 AM</p>
-      </div>
-
-      <div class="visit-card">
-        <h3>📞 Phone</h3>
-        <p>655 684 457 / 955 010 105</p>
-      </div>
+    <div>
+      <h4>🕒 Horario</h4>
+      <p>Todos los días<br>12:00 – 01:00</p>
     </div>
-  </section>
+    <div>
+      <h4>📞 Teléfono</h4>
+      <p>955 988 446<br>655 046 105</p>
+    </div>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    © 2024 Kebab Cavaleri. All rights reserved.
-  </footer>
+<footer>
+  © 2024 Kebab Cavaleri · Todos los derechos reservados
+</footer>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
