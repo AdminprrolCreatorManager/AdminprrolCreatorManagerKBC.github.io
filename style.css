@@ -126,3 +126,40 @@ footer {
 }
 
 
+/* Dropdown ingredient styles */
+.card .price {
+  color: #e53935;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.card .ingredients-toggle {
+  padding: 0 15px 15px;
+  font-size: 0.9rem;
+}
+
+.card .ingredients-toggle summary {
+  background: #f8f9fa;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  list-style: none;
+  font-weight: 500;
+  color: #0b3c6d;
+  text-align: center;
+  margin-top: 8px;
+  user-select: none;
+}
+
+/* Hide default marker (arrow) */
+.card .ingredients-toggle > summary::marker,
+.card .ingredients-toggle > summary::-webkit-details-marker {
+  display: none;
+}
+
+.card .ingredients {
+  margin-top: 10px;
+  color: #555;
+  line-height: 1.5;
+  text-align: left;
+}
