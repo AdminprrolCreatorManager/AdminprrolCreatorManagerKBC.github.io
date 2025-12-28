@@ -248,3 +248,80 @@ footer {
   line-height: 1.5;
 }
 
+/* === OFFERS + QUICK MENU SIDE-BY-SIDE === */
+.offers-menu-section {
+  padding: 40px 20px;
+  background: #f4f6fb;
+}
+
+.offers-menu-container {
+  display: flex;
+  gap: 25px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Left: Offers (66%) */
+.offers-column {
+  flex: 2;
+}
+
+/* Right: Quick Menu (33%) */
+.menu-column {
+  flex: 1;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  align-self: flex-start;
+}
+
+.menu-column h3 {
+  color: #0b3c6d;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.quick-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.quick-menu li {
+  margin: 12px 0;
+  text-align: center;
+}
+
+.quick-menu a {
+  color: #e53935;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+  display: block;
+}
+
+.quick-menu a:hover {
+  color: #0b3c6d;
+}
+
+.quick-btn {
+  background: #e53935;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 8px;
+}
+
+/* Responsive: stack on mobile */
+@media (max-width: 768px) {
+  .offers-menu-container {
+    flex-direction: column;
+  }
+  .menu-column {
+    margin-top: 30px;
+  }
+}
