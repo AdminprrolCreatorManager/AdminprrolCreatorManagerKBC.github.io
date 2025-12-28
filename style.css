@@ -126,16 +126,34 @@ footer {
 }
 
 
-/* Dropdown ingredient styles */
+/* === Improved Dropdown with Smooth Slide === */
+.card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
 .card .price {
   color: #e53935;
   font-weight: bold;
-  margin-bottom: 8px;
+  margin: 10px 0 8px;
 }
 
+/* Slide-down dropdown */
 .card .ingredients-toggle {
-  padding: 0 15px 15px;
+  padding: 0 15px 0;
   font-size: 0.9rem;
+  max-height: 40px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.card .ingredients-toggle[open] {
+  max-height: 200px;
+  padding: 0 15px 15px;
 }
 
 .card .ingredients-toggle summary {
@@ -149,9 +167,10 @@ footer {
   text-align: center;
   margin-top: 8px;
   user-select: none;
+  display: block;
 }
 
-/* Hide default marker (arrow) */
+/* Hide default arrow */
 .card .ingredients-toggle > summary::marker,
 .card .ingredients-toggle > summary::-webkit-details-marker {
   display: none;
@@ -163,3 +182,4 @@ footer {
   line-height: 1.5;
   text-align: left;
 }
+
