@@ -41,13 +41,21 @@ body {
 }
 
 .btn {
-  background: #e53935;
-  color: white;
+  background: transparent;     /* Makes background fully transparent */
+  color: white;                /* Keep text white for contrast */
   padding: 14px 30px;
   border-radius: 25px;
   display: inline-block;
   margin-top: 20px;
   text-decoration: none;
+  border: 2px solid white;     /* Adds a white outline */
+  transition: all 0.3s ease;   /* Optional: smooth hover effect */
+}
+
+/* Optional: Add hover effect */
+.btn:hover {
+  background: rgba(255, 255, 255, 0.1); /* Slight tint on hover */
+  transform: translateY(-2px); /* Slight lift on hover */
 }
 
 /* MENU */
@@ -116,4 +124,5 @@ footer {
   text-align: center;
   padding: 15px;
 }
+
 
