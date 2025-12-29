@@ -20,16 +20,22 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
     const name = button.getAttribute('data-name');
     const price = parseFloat(button.getAttribute('data-price'));
 
-    // Check if item already in cart
-    const existingItem = cart.find(item => item.name === name);
+    // Prompt for custom notes (optional)
+    const notes = prompt(`Notas para "${name}" (opcional):`, "").trim();
+
+    // Find existing item with same name AND same notes
+    const existingItem = cart.find(item => 
+      item.name === name && item.notes === notes
+    );
+
     if (existingItem) {
       existingItem.quantity += 1;
     } else {
-      cart.push({ name, price, quantity: 1 });
+      cart.push({ name, price, quantity: 1, notes });
     }
 
     updateCartUI();
-    showCart(); // Optional: auto-open cart when adding
+    // Cart does NOT auto-open — only count updates (as requested)
   });
 });
 
@@ -51,16 +57,22 @@ function updateCartUI() {
   }
 
   cart.forEach((item, index) => {
+    let itemDisplay = `<span>${item.name}`;
+    if (item.notes) {
+      itemDisplay += `<br><small style="color:#666; font-weight:normal;">"${item.notes}"</small>`;
+    }
+    itemDisplay += `</span>`;
+
     const itemDiv = document.createElement('div');
     itemDiv.className = 'cart-item';
     itemDiv.innerHTML = `
-      <span>${item.name}</span>
+      ${itemDisplay}
       <div>
         <button class="qty-btn minus" data-index="${index}">−</button>
         <span class="qty">${item.quantity}</span>
         <button class="qty-btn plus" data-index="${index}">+</button>
       </div>
-      <span>${(item.price * item.quantity).toFixed(2)}€</span>
+      <span class="item-total">${(item.price * item.quantity).toFixed(2)}€</span>
       <button class="remove-btn" data-index="${index}">×</button>
     `;
     cartItemsContainer.appendChild(itemDiv);
@@ -118,8 +130,17 @@ checkoutBtn.addEventListener('click', () => {
     alert('Tu carrito está vacío.');
     return;
   }
-  alert('¡Gracias por tu pedido! (En una versión real, aquí iría el envío al admin o WhatsApp.)');
-  // TODO: Later, send to admin panel or WhatsApp
+
+  // Build order message (for future WhatsApp or email)
+  let message = '¡Nuevo pedido!\n\n';
+  cart.forEach(item => {
+    message += `- ${item.quantity}x ${item.name} (${item.price.toFixed(2)}€ c/u)`;
+    if (item.notes) message += ` [${item.notes}]`;
+    message += '\n';
+  });
+  message += `\nTotal: ${cart.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2)}€`;
+
+  alert('¡Gracias por tu pedido!\n\n(A continuación, en versión real, se enviaría al administrador o WhatsApp.)\n\n' + message);
 });
 
 // Initialize
