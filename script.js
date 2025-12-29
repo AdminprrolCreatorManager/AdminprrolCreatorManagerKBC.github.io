@@ -14,6 +14,19 @@ const cartTotalElement = document.getElementById('cart-total');
 const cartCountElement = document.getElementById('cart-count');
 const checkoutBtn = document.getElementById('checkout-btn');
 
+// Modal elements
+const orderModal = document.getElementById('order-modal');
+const closeModalBtn = document.getElementById('close-modal');
+const orderTypeRadios = document.querySelectorAll('input[name="order-type"]');
+const postalCodeInput = document.getElementById('postal-code');
+const addressField = document.getElementById('address-field');
+const addressTextarea = document.getElementById('address');
+const customerNameInput = document.getElementById('customer-name');
+const customerPhoneInput = document.getElementById('customer-phone');
+const paymentRadios = document.querySelectorAll('input[name="payment"]');
+const submitOrderBtn = document.getElementById('submit-order');
+const postalError = document.getElementById('postal-error');
+
 // Add to cart buttons
 document.querySelectorAll('.add-to-cart').forEach(button => {
   button.addEventListener('click', () => {
@@ -35,7 +48,6 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
     }
 
     updateCartUI();
-    // Cart does NOT auto-open — only count updates (as requested)
   });
 });
 
@@ -119,29 +131,138 @@ function hideCart() {
   cartOverlay.classList.remove('active');
 }
 
+// Modal: Show
+function showOrderModal() {
+  if (cart.length === 0) {
+    alert('Tu carrito está vacío.');
+    return;
+  }
+  // Reset form
+  document.querySelector('input[name="order-type"][value="pickup"]').checked = true;
+  postalCodeInput.value = '';
+  addressTextarea.value = '';
+  customerNameInput.value = '';
+  customerPhoneInput.value = '';
+  document.querySelector('input[name="payment"][value="cash"]').checked = true;
+  postalError.classList.add('hidden');
+  addressField.classList.add('hidden');
+
+  orderModal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden'; // prevent background scroll
+}
+
+// Modal: Hide (cancel order)
+function hideOrderModal() {
+  orderModal.classList.add('hidden');
+  document.body.style.overflow = ''; // restore scroll
+}
+
+// Toggle address field and update total dynamically
+function toggleAddressAndTotal() {
+  const isDelivery = document.querySelector('input[name="order-type"]:checked').value === 'delivery';
+  if (isDelivery) {
+    addressField.classList.remove('hidden');
+  } else {
+    addressField.classList.add('hidden');
+  }
+}
+
+// Validate postal code in real time
+function validatePostalCode() {
+  const code = postalCodeInput.value.trim();
+  if (code && code !== '41100') {
+    postalError.classList.remove('hidden');
+    return false;
+  } else {
+    postalError.classList.add('hidden');
+    return true;
+  }
+}
+
+// Validate entire form
+function validateForm() {
+  let valid = true;
+
+  // Reset errors
+  postalError.classList.add('hidden');
+
+  // Postal code (only required for delivery)
+  const isDelivery = document.querySelector('input[name="order-type"]:checked').value === 'delivery';
+  if (isDelivery) {
+    if (!validatePostalCode()) valid = false;
+    if (!addressTextarea.value.trim()) valid = false;
+  }
+
+  // Name and phone always required
+  if (!customerNameInput.value.trim()) valid = false;
+  const phone = customerPhoneInput.value.trim();
+  if (!phone || phone.replace(/\D/g, '').length < 9) valid = false;
+
+  return valid;
+}
+
+// Handle form submission
+function submitOrder() {
+  if (!validateForm()) {
+    alert('Por favor, completa todos los campos correctamente.');
+    return;
+  }
+
+  const isDelivery = document.querySelector('input[name="order-type"]:checked').value === 'delivery';
+  const baseTotal = parseFloat(cartTotalElement.textContent);
+  const finalTotal = isDelivery ? (baseTotal + 1.5).toFixed(2) : baseTotal.toFixed(2);
+
+  // Collect order data (for future Google Sheet integration)
+  const orderData = {
+    items: cart.map(item => ({
+      name: item.name,
+      price: item.price,
+      quantity: item.quantity,
+      notes: item.notes
+    })),
+    type: isDelivery ? 'delivery' : 'pickup',
+    postalCode: isDelivery ? postalCodeInput.value.trim() : null,
+    address: isDelivery ? addressTextarea.value.trim() : null,
+    name: customerNameInput.value.trim(),
+    phone: customerPhoneInput.value.trim(),
+    payment: document.querySelector('input[name="payment"]:checked').value,
+    total: parseFloat(finalTotal),
+    timestamp: new Date().toLocaleString('es-ES')
+  };
+
+  // For now: just show confirmation (later: send to Google Sheet)
+  alert(`¡Pedido confirmado!\nTotal: ${finalTotal}€\n\n(Ahora se enviaría al restaurante.)`);
+
+  // Reset cart and close modal
+  cart = [];
+  updateCartUI();
+  hideOrderModal();
+}
+
 // Event Listeners
 cartIcon.addEventListener('click', showCart);
 closeCartBtn.addEventListener('click', hideCart);
 cartOverlay.addEventListener('click', hideCart);
 
-// Checkout button
-checkoutBtn.addEventListener('click', () => {
-  if (cart.length === 0) {
-    alert('Tu carrito está vacío.');
-    return;
-  }
+// Checkout opens modal
+checkoutBtn.addEventListener('click', showOrderModal);
 
-  // Build order message (for future WhatsApp or email)
-  let message = '¡Nuevo pedido!\n\n';
-  cart.forEach(item => {
-    message += `- ${item.quantity}x ${item.name} (${item.price.toFixed(2)}€ c/u)`;
-    if (item.notes) message += ` [${item.notes}]`;
-    message += '\n';
-  });
-  message += `\nTotal: ${cart.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2)}€`;
-
-  alert('¡Gracias por tu pedido!\n\n(A continuación, en versión real, se enviaría al administrador o WhatsApp.)\n\n' + message);
+// Modal close
+closeModalBtn.addEventListener('click', hideOrderModal);
+orderModal.addEventListener('click', (e) => {
+  if (e.target === orderModal) hideOrderModal(); // close if clicking overlay
 });
+
+// Delivery/pickup toggle
+orderTypeRadios.forEach(radio => {
+  radio.addEventListener('change', toggleAddressAndTotal);
+});
+
+// Real-time postal validation
+postalCodeInput.addEventListener('input', validatePostalCode);
+
+// Form submission
+submitOrderBtn.addEventListener('click', submitOrder);
 
 // Initialize
 updateCartUI();
