@@ -27,6 +27,26 @@ const paymentRadios = document.querySelectorAll('input[name="payment"]');
 const submitOrderBtn = document.getElementById('submit-order');
 const postalError = document.getElementById('postal-error');
 
+// === LOCALSTORAGE HELPER FUNCTIONS ===
+function saveCartToStorage() {
+  localStorage.setItem('kebabCavaleriCart', JSON.stringify(cart));
+}
+
+function loadCartFromStorage() {
+  const saved = localStorage.getItem('kebabCavaleriCart');
+  if (saved) {
+    try {
+      cart = JSON.parse(saved);
+    } catch (e) {
+      console.warn('Invalid cart data in localStorage, resetting...');
+      cart = [];
+    }
+  }
+}
+
+// Initialize cart from storage
+loadCartFromStorage();
+
 // Add to cart buttons
 document.querySelectorAll('.add-to-cart').forEach(button => {
   button.addEventListener('click', () => {
@@ -48,6 +68,7 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
     }
 
     updateCartUI();
+    saveCartToStorage(); // 👈 Save after every change
   });
 });
 
@@ -100,6 +121,7 @@ function updateCartUI() {
         cart.splice(index, 1);
       }
       updateCartUI();
+      saveCartToStorage(); // 👈 Save after every change
     });
   });
 
@@ -108,6 +130,7 @@ function updateCartUI() {
       const index = e.target.getAttribute('data-index');
       cart[index].quantity += 1;
       updateCartUI();
+      saveCartToStorage(); // 👈 Save after every change
     });
   });
 
@@ -116,6 +139,7 @@ function updateCartUI() {
       const index = e.target.getAttribute('data-index');
       cart.splice(index, 1);
       updateCartUI();
+      saveCartToStorage(); // 👈 Save after every change
     });
   });
 }
@@ -237,6 +261,9 @@ function submitOrder() {
   cart = [];
   updateCartUI();
   hideOrderModal();
+
+  // Clear localStorage after successful order
+  localStorage.removeItem('kebabCavaleriCart');
 }
 
 // Event Listeners
