@@ -41,21 +41,20 @@ body {
 }
 
 .btn {
-  background: transparent;     /* Makes background fully transparent */
-  color: white;                /* Keep text white for contrast */
+  background: transparent;
+  color: white;
   padding: 14px 30px;
   border-radius: 25px;
   display: inline-block;
   margin-top: 20px;
   text-decoration: none;
-  border: 2px solid white;     /* Adds a white outline */
-  transition: all 0.3s ease;   /* Optional: smooth hover effect */
+  border: 2px solid white;
+  transition: all 0.3s ease;
 }
 
-/* Optional: Add hover effect */
 .btn:hover {
-  background: rgba(255, 255, 255, 0.1); /* Slight tint on hover */
-  transform: translateY(-2px); /* Slight lift on hover */
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
 }
 
 /* MENU */
@@ -126,7 +125,6 @@ footer {
   padding: 15px;
 }
 
-
 /* === Improved Dropdown with Smooth Slide === */
 .card {
   background: white;
@@ -143,7 +141,6 @@ footer {
   margin: 10px 0 8px;
 }
 
-/* Slide-down dropdown */
 .card .ingredients-toggle {
   padding: 0 15px 0;
   font-size: 0.9rem;
@@ -171,7 +168,6 @@ footer {
   display: block;
 }
 
-/* Hide default arrow */
 .card .ingredients-toggle > summary::marker,
 .card .ingredients-toggle > summary::-webkit-details-marker {
   display: none;
@@ -184,13 +180,14 @@ footer {
   text-align: left;
 }
 
-
 /* === OFFERS BANNER SECTION === */
 .offers-banner {
-  background: url('images/offers-bg.jpg') center/cover no-repeat;
+  background: url('images/banner66.jpg') center/cover no-repeat;
   padding: 60px 20px;
   position: relative;
   overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 .offers-overlay {
@@ -269,7 +266,7 @@ footer {
 /* Right: Mini Menu with Background (33%) */
 .menu-column {
   flex: 1;
-  background: url('images/menu-bg.jpg') center/cover no-repeat;
+  background: url('images/banner33.jpg') center/cover no-repeat;
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
@@ -303,7 +300,6 @@ footer {
   font-size: 1.3rem;
   font-weight: 600;
 }
-
 
 .quick-menu {
   list-style: none;
@@ -354,7 +350,7 @@ footer {
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
   margin: 15px 0;
-  justify-items: center; /* ✅ Centers cards */
+  justify-items: center;
 }
 
 .mini-menu-grid .card {
@@ -364,7 +360,7 @@ footer {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   border-radius: 10px;
   width: 100%;
-  max-width: 160px; /* ✅ Wider cards */
+  max-width: 160px;
   text-align: center;
   transition: transform 0.2s ease;
 }
@@ -376,7 +372,7 @@ footer {
 
 .mini-menu-grid .card img {
   width: 100%;
-  height: 100px; /* ✅ Bigger image */
+  height: 100px;
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 8px;
@@ -394,20 +390,19 @@ footer {
 }
 
 .mini-menu-grid .card .price {
-  font-size: 1rem; /* ✅ Slightly bigger price */
+  font-size: 1rem;
   margin: 0;
   color: #e53935;
   font-weight: bold;
 }
 
-/* Full-width button */
 .quick-btn {
   background: #e53935;
   color: white;
   padding: 12px 20px;
   border-radius: 25px;
   font-size: 0.95rem;
-  display: block; /* ✅ Full width */
+  display: block;
   text-decoration: none;
   margin-top: 20px;
   width: 100%;
@@ -420,7 +415,6 @@ footer {
   background: #c0392b;
 }
 
-/* Mobile: 2 columns → 3 on very small screens */
 @media (max-width: 576px) {
   .mini-menu-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -437,7 +431,6 @@ footer {
 /* SHOPPING CART (NEW) */
 /* ================== */
 
-/* Cart icon in navbar */
 .navbar .cart-icon {
   cursor: pointer;
   position: relative;
@@ -449,7 +442,7 @@ footer {
 }
 
 #cart-count {
-  background: #e53935; /* Matches your price red */
+  background: #e53935;
   color: white;
   border-radius: 50%;
   padding: 2px 7px;
@@ -462,7 +455,6 @@ footer {
   justify-content: center;
 }
 
-/* Cart sidebar */
 .cart-sidebar {
   position: fixed;
   top: 0;
@@ -589,7 +581,6 @@ footer {
   text-align: right;
 }
 
-/* Cart total */
 .cart-total {
   font-size: 1.2rem;
   font-weight: bold;
@@ -600,7 +591,6 @@ footer {
   text-align: center;
 }
 
-/* Checkout button */
 #checkout-btn {
   width: 100%;
   padding: 12px;
@@ -623,7 +613,6 @@ footer {
   cursor: not-allowed;
 }
 
-/* Cart overlay (click outside to close) */
 .cart-overlay {
   position: fixed;
   top: 0;
@@ -642,7 +631,6 @@ footer {
   visibility: visible;
 }
 
-/* Responsive: narrower on mobile */
 @media (max-width: 480px) {
   .cart-sidebar {
     width: 100%;
@@ -668,7 +656,7 @@ footer {
   cursor: pointer;
   border: none;
   padding: 0;
-  margin-top: 12px; /* Slight space below price */
+  margin-top: 12px;
   transition: transform 0.2s ease, background 0.2s ease;
   text-decoration: none;
   line-height: 1;
