@@ -34,6 +34,43 @@
 <!-- CART OVERLAY -->
 <div id="cart-overlay" class="cart-overlay"></div>
 
+<!-- ORDER CONFIRMATION MODAL -->
+<div id="order-modal" class="modal-overlay hidden">
+  <div class="modal-content">
+    <button id="close-modal" class="modal-close">&times;</button>
+    <h3>Finaliza tu pedido</h3>
+
+    <div class="form-group">
+      <label><input type="radio" name="order-type" value="pickup" checked> Recogida</label>
+      <label><input type="radio" name="order-type" value="delivery"> Entrega (+1,50€)</label>
+    </div>
+
+    <div class="form-group">
+      <input type="text" id="postal-code" placeholder="Código postal" maxlength="5">
+      <div id="postal-error" class="error-message hidden">Solo entregamos en 41100</div>
+    </div>
+
+    <div id="address-field" class="form-group hidden">
+      <textarea id="address" placeholder="Dirección completa (calle, número, piso, puerta, etc.)" rows="3"></textarea>
+    </div>
+
+    <div class="form-group">
+      <input type="text" id="customer-name" placeholder="Nombre completo" required>
+    </div>
+
+    <div class="form-group">
+      <input type="tel" id="customer-phone" placeholder="Teléfono (ej. 612345678)" required>
+    </div>
+
+    <div class="form-group">
+      <label><input type="radio" name="payment" value="cash" checked> Efectivo</label>
+      <label><input type="radio" name="payment" value="card"> Tarjeta</label>
+    </div>
+
+    <button id="submit-order" class="btn">Confirmar Pedido</button>
+  </div>
+</div>
+
 <!-- HERO -->
 <header class="hero">
   <h1>Kebabs & Durums Auténticos</h1>
@@ -420,7 +457,7 @@
     <div class="card">
       <img src="images/Patatas Fritas.jpg">
       <h4>Patatas Fritas</h4>
-      <p class="price">2,00€-4,00€</p>
+      <p class="price">2,00€–4,00€</p>
       <button class="add-to-cart" data-name="Patatas Fritas" data-price="2">+</button>
     </div>
     <div class="card">
@@ -604,7 +641,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
