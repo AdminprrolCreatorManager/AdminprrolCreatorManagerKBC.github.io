@@ -27,8 +27,7 @@
 <!-- OFFERS + QUICK MENU -->
 <section class="offers-menu-section">
   <div class="offers-menu-container">
-    
-    <!-- LEFT: Offers (66%) -->
+
     <div class="offers-column">
       <div class="offers-banner">
         <div class="offers-overlay">
@@ -38,180 +37,70 @@
               <h3>Menú del Día</h3>
               <p class="price">6,50€</p>
               <p class="desc">Durum + Patatas + Refresco</p>
-            </div>
-            <div class="offer-item">
-              <h3>2×1 en Kebabs</h3>
-              <p class="price">¡Solo hoy!</p>
-              <p class="desc">Lunes a jueves, de 12:00 a 16:00</p>
+              <button class="add-to-cart" data-name="Menú del Día" data-price="6.5">➕ Añadir</button>
             </div>
             <div class="offer-item">
               <h3>Combo Familiar</h3>
               <p class="price">18,00€</p>
-              <p class="desc">2 Durums + 2 Kebabs + 1 Ración de Patatas</p>
+              <p class="desc">2 Durums + 2 Kebabs + Patatas</p>
+              <button class="add-to-cart" data-name="Combo Familiar" data-price="18">➕ Añadir</button>
             </div>
           </div>
         </div>
       </div>
     </div>
-    
-   <!-- RIGHT: Mini Menu with Background (33%) -->
-<div class="menu-column">
-  <h3>🍽️ Nuestros Menús</h3>
-  <div class="mini-menu-grid">
-    <div class="card">
-      <img src="images/Durum especial.jpg" alt="Durum Especial">
-      <h4>Durum Especial</h4>
-      <p class="price">5,00€</p>
+
+    <div class="menu-column">
+      <h3>🍽️ Nuestros Menús</h3>
+      <div class="mini-menu-grid">
+        <div class="card">
+          <img src="images/Durum especial.jpg">
+          <h4>Durum Especial</h4>
+          <p class="price">5,00€</p>
+          <button class="add-to-cart" data-name="Durum Especial" data-price="5">➕</button>
+        </div>
+        <div class="card">
+          <img src="images/Patatas Fritas.jpg">
+          <h4>Patatas Fritas</h4>
+          <p class="price">2,00€</p>
+          <button class="add-to-cart" data-name="Patatas Fritas" data-price="2">➕</button>
+        </div>
+      </div>
+      <a href="#menu" class="btn quick-btn">Ver Menú Completo</a>
     </div>
-    <div class="card">
-      <img src="images/Kebab especial.jpg" alt="Kebab Especial">
-      <h4>Kebab Especial</h4>
-      <p class="price">5,00€</p>
-    </div>
-    <div class="card">
-      <img src="images/Menu Durum.jpg" alt="Menú Durum">
-      <h4>Menú Durum</h4>
-      <p class="price">7,50€</p>
-    </div>
-    <div class="card">
-      <img src="images/Patatas Fritas.jpg" alt="Patatas Fritas">
-      <h4>Patatas Fritas</h4>
-      <p class="price">2,00€</p>
-    </div>
-    <div class="card">
-      <img src="images/Durum super.jpg" alt="Durum Super">
-      <h4>Durum Super</h4>
-      <p class="price">6,00€</p>
-    </div>
-    <div class="card">
-      <img src="images/Kebab Cavaleri.jpg" alt="Kebab Cavaleri">
-      <h4>Kebab Cavaleri</h4>
-      <p class="price">6,00€</p>
-    </div>
+
   </div>
-  <a href="#menu" class="btn quick-btn">Ver Menú Completo</a>
-</div>
 </section>
-  
+
 <!-- MENU -->
 <section id="menu" class="menu">
   <h2>Nuestro Menú</h2>
 
   <!-- DURUMS -->
-  <h3>Durums (Enrollados)</h3>
+  <h3>Durums</h3>
   <div class="menu-grid">
     <div class="card">
-      <img src="images/Durum especial.jpg" alt="Durum Especial">
+      <img src="images/Durum especial.jpg">
       <h4>Durum Especial</h4>
       <p class="price">5,00€</p>
-      <details class="ingredients-toggle">
-        <summary>Ver ingredientes</summary>
-        <p class="ingredients">Carne de ternera, lechuga, tomate, cebolla, salsa blanca, salsa roja.</p>
-      </details>
+      <button class="add-to-cart" data-name="Durum Especial" data-price="5">➕ Añadir</button>
     </div>
     <div class="card">
-      <img src="images/Durum super.jpg" alt="Durum Super">
+      <img src="images/Durum super.jpg">
       <h4>Durum Super</h4>
       <p class="price">6,00€</p>
-      <details class="ingredients-toggle">
-        <summary>Ver ingredientes</summary>
-        <p class="ingredients">Carne de pollo, lechuga, tomate, cebolla, salsa blanca, salsa roja.</p>
-      </details>
-    </div>
-    <div class="card">
-      <img src="images/Durum Cavaleri.jpg" alt="Durum Cavaleri">
-      <h4>Durum Cavaleri</h4>
-      <p class="price">6,00€</p>
-      <details class="ingredients-toggle">
-        <summary>Ver ingredientes</summary>
-        <p class="ingredients">Carne mixta, lechuga, tomate, cebolla, salsa blanca, salsa roja.</p>
-      </details>
-    </div>
-    <div class="card">
-      <img src="images/Durum Falafel.jpg" alt="Durum Falafel">
-      <h4>Durum Falafel</h4>
-      <p class="price">5,00€</p>
-      <details class="ingredients-toggle">
-        <summary>Ver ingredientes</summary>
-        <p class="ingredients">Falafel casero, lechuga, tomate, cebolla, salsa tahini, salsa roja.</p>
-      </details>
-    </div>
-    <div class="card">
-      <img src="images/Durum Simple.jpg" alt="Durum Simple">
-      <h4>Durum Simple</h4>
-      <p class="price">6,00€</p>
-      <details class="ingredients-toggle">
-        <summary>Ver ingredientes</summary>
-        <p class="ingredients">Carne de pollo, lechuga, tomate, cebolla, salsa blanca, salsa roja.</p>
-      </details>
-    </div>
-    <div class="card">
-      <img src="images/Durum solo carne.png" alt="Durum Solo de Carne">
-      <h4>Durum Solo de Carne</h4>
-      <p class="price">5,00€</p>
-      <details class="ingredients-toggle">
-        <summary>Ver ingredientes</summary>
-        <p class="ingredients">Carne de ternera, lechuga, tomate, cebolla, salsa blanca, salsa roja.</p>
-      </details>
+      <button class="add-to-cart" data-name="Durum Super" data-price="6">➕ Añadir</button>
     </div>
   </div>
 
   <!-- KEBABS -->
-  <h3>Kebabs (Pan Pita)</h3>
+  <h3>Kebabs</h3>
   <div class="menu-grid">
     <div class="card">
-      <img src="images/Kebab especial.jpg" alt="Kebab Especial">
+      <img src="images/Kebab especial.jpg">
       <h4>Kebab Especial</h4>
       <p class="price">5,00€</p>
-      <details class="ingredients-toggle">
-        <summary>Ver ingredientes</summary>
-        <p class="ingredients">Carne de ternera, lechuga, tomate, cebolla, salsa blanca, salsa roja.</p>
-      </details>
-    </div>
-    <div class="card">
-      <img src="images/Kebab Super.jpg" alt="Kebab Super">
-      <h4>Kebab Super</h4>
-      <p class="price">6,00€</p>
-      <details class="ingredients-toggle">
-        <summary>Ver ingredientes</summary>
-        <p class="ingredients">Carne de pollo, lechuga, tomate, cebolla, salsa blanca, salsa roja.</p>
-      </details>
-    </div>
-    <div class="card">
-      <img src="images/Kebab Cavaleri.jpg" alt="Kebab Cavaleri">
-      <h4>Kebab Cavaleri</h4>
-      <p class="price">6,00€</p>
-      <details class="ingredients-toggle">
-        <summary>Ver ingredientes</summary>
-        <p class="ingredients">Carne mixta, lechuga, tomate, cebolla, salsa blanca, salsa roja.</p>
-      </details>
-    </div>
-    <div class="card">
-      <img src="images/Kebab Falafel.png" alt="Kebab Falafel">
-      <h4>Kebab Falafel</h4>
-      <p class="price">5,00€</p>
-      <details class="ingredients-toggle">
-        <summary>Ver ingredientes</summary>
-        <p class="ingredients">Falafel casero, lechuga, tomate, cebolla, salsa tahini, salsa roja.</p>
-      </details>
-    </div>
-    <div class="card">
-      <img src="images/Kebab Simple.jpg" alt="Kebab Simple">
-      <h4>Kebab Simple</h4>
-      <p class="price">6,00€</p>
-      <details class="ingredients-toggle">
-        <summary>Ver ingredientes</summary>
-        <p class="ingredients">Carne de pollo, lechuga, tomate, cebolla, salsa blanca, salsa roja.</p>
-      </details>
-    </div>
-    <div class="card">
-      <img src="images/Kebab solo de carne.png" alt="Kebab Solo de Carne">
-      <h4>Kebab Solo de Carne</h4>
-      <p class="price">5,00€</p>
-      <details class="ingredients-toggle">
-        <summary>Ver ingredientes</summary>
-        <p class="ingredients">Carne de ternera, lechuga, tomate, cebolla, salsa blanca, salsa roja.</p>
-      </details>
+      <button class="add-to-cart" data-name="Kebab Especial" data-price="5">➕ Añadir</button>
     </div>
   </div>
 
@@ -219,69 +108,27 @@
   <h3>Menús</h3>
   <div class="menu-grid">
     <div class="card">
-      <img src="images/Menu Durum.jpg" alt="Menú Durum">
+      <img src="images/Menu Durum.jpg">
       <h4>Menú Durum</h4>
       <p class="price">7,50€</p>
-    </div>
-    <div class="card">
-      <img src="images/Menu Kebab.jpg" alt="Menú Kebab">
-      <h4>Menú Kebab</h4>
-      <p class="price">7,50€</p>
-    </div>
-    <div class="card">
-      <img src="images/Menu Lahmacun.jpg" alt="Menú Lahmacun">
-      <h4>Menú Lahmacun</h4>
-      <p class="price">8,00€</p>
-    </div>
-    <div class="card">
-      <img src="images/Menu Hamburguesa.jpg" alt="Menú Hamburguesa">
-      <h4>Menú Hamburguesa</h4>
-      <p class="price">6,50€</p>
-    </div>
-    <div class="card">
-      <img src="images/Menu Plato.jpg" alt="Menú Plato">
-      <h4>Menú Plato</h4>
-      <p class="price">9,00€</p>
-    </div>
-    <div class="card">
-      <img src="images/Menu Especial.jpg" alt="Menú Especial">
-      <h4>Menú Especial</h4>
-      <p class="price">10,00€</p>
+      <button class="add-to-cart" data-name="Menú Durum" data-price="7.5">➕ Añadir</button>
     </div>
   </div>
 
-  <!-- EXTRAS -->
+  <!-- EXTRAS (FIXED & ORDERABLE) -->
   <h3>Extras</h3>
   <div class="menu-grid">
     <div class="card">
-      <img src="images/Patatas Fritas.jpg" alt="Patatas Fritas">
+      <img src="images/Patatas Fritas.jpg">
       <h4>Patatas Fritas</h4>
-      <p class="price">2,00€ – 4,00€</p>
+      <p class="price">2,00€</p>
+      <button class="add-to-cart" data-name="Patatas Fritas" data-price="2">➕ Añadir</button>
     </div>
     <div class="card">
-      <img src="images/Alitas de pollo con patatas.jpg" alt="Alitas de Pollo con Patatas">
-      <h4>Alitas de Pollo con Patatas</h4>
-      <p class="price">6,50€</p>
-    </div>
-    <div class="card">
-      <img src="images/Nuggets con patatas.jpg" alt="Nuggets con Patatas">
-      <h4>Nuggets con Patatas</h4>
-      <p class="price">5,00€</p>
-    </div>
-    <div class="card">
-      <img src="images/Salsa Extra.jpg" alt="Salsa Extra">
+      <img src="images/Salsa Extra.jpg">
       <h4>Salsa Extra</h4>
       <p class="price">0,50€</p>
-    </div>
-    <div class="card">
-      <img src="images/Ensalada.jpg" alt="Ensalada">
-      <h4>Ensalada</h4>
-      <p class="price">4,00€</p>
-    </div>
-    <div class="card">
-      <img src="images/Lahmacun.jpg" alt="Lahmacun">
-      <h4>Lahmacun</h4>
-      <p class="price">5,00€</p>
+      <button class="add-to-cart" data-name="Salsa Extra" data-price="0.5">➕ Añadir</button>
     </div>
   </div>
 
@@ -289,39 +136,10 @@
   <h3>Tarrinas</h3>
   <div class="menu-grid">
     <div class="card">
-      <img src="images/Tarrina grande arroz y carne mixta con salsa.jpg" alt="Tarrina Grande Arroz y Carne Mixta">
-      <h4>Tarrina Grande Arroz y Carne Mixta</h4>
-      <p class="price">9,00€</p>
-    </div>
-    <div class="card">
-      <img src="images/Tarrina grande papas y carne mixta con salsa.jpg" alt="Tarrina Grande Papas y Carne Mixta">
-      <h4>Tarrina Grande Papas y Carne Mixta</h4>
-      <p class="price">9,00€</p>
-    </div>
-    <div class="card">
-      <img src="images/Tarrina pequeña de arroz.jpg" alt="Tarrina Pequeña de Arroz">
-      <h4>Tarrina Pequeña de Arroz</h4>
-      <p class="price">6,00€</p>
-    </div>
-    <div class="card">
-      <img src="images/Tarrina pequeña mixta carne y arroz.jpg" alt="Tarrina Pequeña Mixta Carne y Arroz">
-      <h4>Tarrina Pequeña Mixta Carne y Arroz</h4>
-      <p class="price">7,00€</p>
-    </div>
-    <div class="card">
-      <img src="images/Tarrina pequeña mixta carne y papas.jpg" alt="Tarrina Pequeña Mixta Carne y Papas">
-      <h4>Tarrina Pequeña Mixta Carne y Papas</h4>
-      <p class="price">7,00€</p>
-    </div>
-    <div class="card">
-      <img src="images/Tarrina grande arroz.jpg" alt="Tarrina Grande de Arroz">
+      <img src="images/Tarrina grande arroz.jpg">
       <h4>Tarrina Grande de Arroz</h4>
       <p class="price">8,00€</p>
-    </div>
-    <div class="card">
-      <img src="images/Tarrina grande papas.jpg" alt="Tarrina Grande de Papas">
-      <h4>Tarrina Grande de Papas</h4>
-      <p class="price">8,00€</p>
+      <button class="add-to-cart" data-name="Tarrina Grande Arroz" data-price="8">➕ Añadir</button>
     </div>
   </div>
 </section>
@@ -329,11 +147,7 @@
 <!-- ABOUT -->
 <section id="about" class="about">
   <h2>Sobre Kebab Cavaleri</h2>
-  <p>
-    En Kebab Cavaleri ofrecemos auténtica comida mediterránea con ingredientes
-    frescos y recetas tradicionales. Todos nuestros productos incluyen salsa blanca
-    y salsa roja.
-  </p>
+  <p>Auténtica comida mediterránea con ingredientes frescos.</p>
 </section>
 
 <!-- VISIT -->
@@ -342,25 +156,19 @@
   <div class="visit-grid">
     <div>
       <h4>📍 Dirección</h4>
-      <p>Avda. de Andalucía 204<br>Coria del Río (Sevilla)</p>
-    </div>
-    <div>
-      <h4>🕒 Horario</h4>
-      <p>Todos los días<br>12:00 – 01:00</p>
+      <p>Avda. de Andalucía 204<br>Coria del Río</p>
     </div>
     <div>
       <h4>📞 Teléfono</h4>
-      <p>955 988 446<br>655 046 105</p>
+      <p>955 988 446</p>
     </div>
   </div>
 </section>
 
 <footer>
-  © 2024 Kebab Cavaleri · Todos los derechos reservados
+  © 2024 Kebab Cavaleri
 </footer>
 
 <script src="script.js"></script>
 </body>
 </html>
-
-
