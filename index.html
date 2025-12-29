@@ -7,7 +7,35 @@
 </head>
 <body>
 
-<!-- NAVBAR -->
+<!-- CART ICON IN NAVBAR -->
+<!-- Replace your current <nav> with this updated version -->
+<nav class="navbar">
+  <div class="logo">KEBAB CAVALERI</div>
+  <ul>
+    <li><a href="#menu">Menú</a></li>
+    <li><a href="#about">Nosotros</a></li>
+    <li><a href="#visit">Contacto</a></li>
+    <li class="cart-icon" id="cart-icon">🛒 <span id="cart-count">0</span></li>
+  </ul>
+</nav>
+
+<!-- CART SIDEBAR -->
+<div id="cart-sidebar" class="cart-sidebar">
+  <div class="cart-header">
+    <h3>Tu Pedido 🛒</h3>
+    <button id="close-cart">&times;</button>
+  </div>
+  <div id="cart-items" class="cart-items"></div>
+  <div class="cart-total">
+    <strong>Total: <span id="cart-total">0.00</span>€</strong>
+  </div>
+  <button id="checkout-btn" class="btn">Finalizar Pedido</button>
+</div>
+
+<!-- CART OVERLAY (for closing cart when clicking outside) -->
+<div id="cart-overlay" class="cart-overlay"></div>
+
+  <!-- NAVBAR -->
 <nav class="navbar">
   <div class="logo">KEBAB CAVALERI</div>
   <ul>
@@ -393,3 +421,4 @@
 <script src="script.js"></script>
 </body>
 </html>
+
