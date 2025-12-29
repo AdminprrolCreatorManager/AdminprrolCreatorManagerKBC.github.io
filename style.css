@@ -641,7 +641,14 @@ footer {
   }
 }
 
-/* Circular Add-to-Cart Buttons — Centered & Clean */
+/* === ADD-TO-CART BUTTONS — BOTTOM-RIGHT CORNER === */
+
+/* Ensure card is position-relative */
+.card {
+  position: relative;
+}
+
+/* Add-to-cart button — bottom-right corner */
 .add-to-cart {
   background: #e53935;
   color: white;
@@ -656,17 +663,47 @@ footer {
   cursor: pointer;
   border: none;
   padding: 0;
-  margin-top: 12px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 2;
   transition: transform 0.2s ease, background 0.2s ease;
-  text-decoration: none;
-  line-height: 1;
-  position: relative;
-  top: 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .add-to-cart:hover {
   background: #c0392b;
   transform: scale(1.1);
+}
+
+/* For Mini Menu cards — same positioning */
+.mini-menu-grid .card .add-to-cart {
+  bottom: 8px;
+  right: 8px;
+}
+
+/* For Full Menu cards — consistent */
+.menu-grid .card .add-to-cart {
+  bottom: 10px;
+  right: 10px;
+}
+
+/* For Offer Items — also use absolute positioning */
+.offer-item {
+  position: relative;
+}
+
+.offer-item .add-to-cart {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 2;
+}
+
+/* Optional: Adjust if needed for offers */
+.offers-container .offer-item .add-to-cart {
+  bottom: 15px;
+  right: 15px;
 }
 
 /* For Mini Menu cards — ensure button stays aligned */
@@ -678,3 +715,4 @@ footer {
 .menu-grid .card .add-to-cart {
   margin-top: 10px;
 }
+
