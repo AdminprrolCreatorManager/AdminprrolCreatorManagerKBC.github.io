@@ -85,6 +85,7 @@ body {
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   text-align: center;
+  position: relative;
 }
 
 .card img {
@@ -126,15 +127,6 @@ footer {
 }
 
 /* === Improved Dropdown with Smooth Slide === */
-.card {
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
 .card .price {
   color: #e53935;
   font-weight: bold;
@@ -220,6 +212,7 @@ footer {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   width: 280px;
   transition: transform 0.3s ease;
+  position: relative;
 }
 
 .offer-item:hover {
@@ -643,12 +636,6 @@ footer {
 
 /* === ADD-TO-CART BUTTONS — BOTTOM-RIGHT CORNER === */
 
-/* Ensure card is position-relative */
-.card {
-  position: relative;
-}
-
-/* Add-to-cart button — bottom-right corner */
 .add-to-cart {
   background: #e53935;
   color: white;
@@ -676,43 +663,148 @@ footer {
   transform: scale(1.1);
 }
 
-/* For Mini Menu cards — same positioning */
+/* Specific overrides */
 .mini-menu-grid .card .add-to-cart {
   bottom: 8px;
   right: 8px;
 }
 
-/* For Full Menu cards — consistent */
-.menu-grid .card .add-to-cart {
-  bottom: 10px;
-  right: 10px;
-}
-
-/* For Offer Items — also use absolute positioning */
-.offer-item {
-  position: relative;
-}
-
-.offer-item .add-to-cart {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  z-index: 2;
-}
-
-/* Optional: Adjust if needed for offers */
+.menu-grid .card .add-to-cart,
 .offers-container .offer-item .add-to-cart {
-  bottom: 15px;
-  right: 15px;
+  bottom: 10px;
+  right: 10px;
 }
 
-/* For Mini Menu cards — ensure button stays aligned */
-.mini-menu-grid .card .add-to-cart {
-  margin-top: 8px;
+/* ====================== */
+/* ORDER MODAL STYLES     */
+/* ====================== */
+
+.hidden {
+  display: none !important;
 }
 
-/* For Full Menu cards — ensure consistent spacing */
-.menu-grid .card .add-to-cart {
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 450px;
+  padding: 30px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #e53935;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  z-index: 3;
+}
+
+.modal-close:hover {
+  background: #c0392b;
+}
+
+.modal-content h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0b3c6d;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #e53935;
+}
+
+/* Radio labels for delivery/pickup & payment */
+.form-group label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 16px;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+.form-group input[type="radio"] {
+  width: auto;
+}
+
+.error-message {
+  color: #e53935;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  min-height: 16px;
+}
+
+#submit-order {
+  width: 100%;
+  padding: 12px;
+  background: #e53935;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
   margin-top: 10px;
+  transition: background 0.3s;
 }
 
+#submit-order:hover {
+  background: #c0392b;
+}
+
+/* Responsive modal */
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 20px;
+  }
+}
