@@ -797,3 +797,43 @@ footer {
   color: white;
   border: none;
 }
+
+/* === ADD-TO-CART BUTTONS — BOTTOM-RIGHT CORNER === */
+.add-to-cart {
+  background: #e53935;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 2;
+  transition: transform 0.2s ease, background 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.add-to-cart:hover {
+  background: #c0392b;
+  transform: scale(1.1);
+}
+
+/* Specific overrides */
+.mini-menu-grid .card .add-to-cart {
+  bottom: 8px;
+  right: 8px;
+}
+
+.menu-grid .card .add-to-cart,
+.offers-container .offer-item .add-to-cart {
+  bottom: 10px;
+  right: 10px;
+}
