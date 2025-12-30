@@ -47,30 +47,68 @@ function loadCartFromStorage() {
 // Initialize cart from storage
 loadCartFromStorage();
 
+// === TEMPORARY STORAGE FOR ITEM BEING ADDED ===
+let pendingItem = null;
+
 // Add to cart buttons
 document.querySelectorAll('.add-to-cart').forEach(button => {
   button.addEventListener('click', () => {
     const name = button.getAttribute('data-name');
     const price = parseFloat(button.getAttribute('data-price'));
-
-    // Prompt for custom notes (optional)
-    const notes = prompt(`Notas para "${name}" (opcional):`, "").trim();
-
-    // Find existing item with same name AND same notes
-    const existingItem = cart.find(item => 
-      item.name === name && item.notes === notes
-    );
-
-    if (existingItem) {
-      existingItem.quantity += 1;
-    } else {
-      cart.push({ name, price, quantity: 1, notes });
-    }
-
-    updateCartUI();
-    saveCartToStorage(); // 👈 Save after every change
+    
+    // Store item temporarily
+    pendingItem = { name, price };
+    
+    // Open note modal
+    document.getElementById('note-modal').classList.remove('hidden');
+    document.getElementById('item-note').value = '';
+    document.body.style.overflow = 'hidden'; // prevent background scroll
   });
 });
+
+// Close note modal (X button)
+document.getElementById('close-note-modal').addEventListener('click', () => {
+  document.getElementById('note-modal').classList.add('hidden');
+  document.body.style.overflow = '';
+  pendingItem = null;
+});
+
+// Skip note
+document.getElementById('skip-note').addEventListener('click', () => {
+  if (pendingItem) {
+    addToCart(pendingItem.name, pendingItem.price, '');
+  }
+  document.getElementById('note-modal').classList.add('hidden');
+  document.body.style.overflow = '';
+  pendingItem = null;
+});
+
+// Save note and add to cart
+document.getElementById('save-note').addEventListener('click', () => {
+  const notes = document.getElementById('item-note').value.trim();
+  if (pendingItem) {
+    addToCart(pendingItem.name, pendingItem.price, notes);
+  }
+  document.getElementById('note-modal').classList.add('hidden');
+  document.body.style.overflow = '';
+  pendingItem = null;
+});
+
+// Reusable function to add item to cart (with or without notes)
+function addToCart(name, price, notes) {
+  const existingItem = cart.find(item => 
+    item.name === name && item.notes === notes
+  );
+
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    cart.push({ name, price, quantity: 1, notes });
+  }
+
+  updateCartUI();
+  saveCartToStorage();
+}
 
 // Update cart UI
 function updateCartUI() {
@@ -293,3 +331,4 @@ submitOrderBtn.addEventListener('click', submitOrder);
 
 // Initialize
 updateCartUI();
+
