@@ -962,3 +962,8 @@ footer {
   }
 }
 
+#note-modal .btn {
+  background: #e53935;
+  color: white;
+  border: none;
+}
