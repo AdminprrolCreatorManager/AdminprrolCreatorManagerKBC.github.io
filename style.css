@@ -498,7 +498,6 @@ footer {
   color: #333;
 }
 
-/* ✅ FIXED: Removed margin-bottom */
 .cart-items {
   flex: 1;
   overflow-y: auto;
@@ -624,17 +623,20 @@ footer {
   visibility: visible;
 }
 
-/* ✅ FINAL MOBILE CART FIX — 80% HEIGHT + STICKY BUTTON */
+/* ✅ FINAL MOBILE CART — ROBUST & CROSS-BROWSER */
 @media (max-width: 480px) {
   .cart-sidebar {
     width: 100%;
     right: -100%;
-    height: 80dvh; /* 👈 Reduced height */
+    /* Fallback for older browsers */
+    height: 80vh;
+    height: 80dvh;
+    max-height: 80vh;
     max-height: 80dvh;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    padding: 20px;
+    padding: 16px;
     box-sizing: border-box;
   }
 
@@ -644,27 +646,28 @@ footer {
 
   .cart-header {
     flex-shrink: 0;
-    padding-bottom: 12px;
+    padding-bottom: 10px;
     border-bottom: 1px solid #eee;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
 
   .cart-items {
     flex: 1;
     overflow-y: auto;
-    padding-right: 8px;
+    padding-right: 6px;
+    margin-bottom: 12px;
     background: #f9f9f9;
     border-radius: 8px;
-    padding: 12px;
-    margin-bottom: 12px;
+    padding: 10px; /* This is now the ONLY padding */
+    /* Avoid double padding */
   }
 
   .cart-total {
     flex-shrink: 0;
     font-size: 1.2rem;
     font-weight: bold;
-    margin: 0 0 12px;
-    padding-top: 12px;
+    margin: 8px 0;
+    padding-top: 10px;
     border-top: 1px solid #eee;
     color: #0b3c6d;
     text-align: center;
@@ -684,7 +687,7 @@ footer {
     cursor: pointer;
     transition: background 0.3s;
     z-index: 10;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
   }
 
   #checkout-btn:hover {
