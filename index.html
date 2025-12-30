@@ -18,21 +18,21 @@
   </ul>
 </nav>
 
-<!-- CART SIDEBAR -->
-<div id="cart-sidebar" class="cart-sidebar">
-  <div class="cart-header">
-    <h3>Tu Pedido 🛒</h3>
-    <button id="close-cart">&times;</button>
+<!-- CART MODAL (replaces sidebar) -->
+<div id="cart-modal" class="modal-overlay hidden">
+  <div class="modal-content" style="max-width: 95%; width: 100%; max-height: 85dvh; display: flex; flex-direction: column; padding: 20px;">
+    <button id="close-cart" class="modal-close">&times;</button>
+    <h3 style="text-align:center; margin: 0 0 16px; color: #0b3c6d;">Tu Pedido 🛒</h3>
+    
+    <div id="cart-items" class="cart-items" style="flex: 1; overflow-y: auto; padding: 0 4px; margin-bottom: 16px;"></div>
+    
+    <div class="cart-total" style="margin: 8px 0; padding-top: 12px; border-top: 1px solid #eee; text-align: center; font-size: 1.2rem; font-weight: bold; color: #0b3c6d;">
+      <strong>Total: <span id="cart-total">0.00</span>€</strong>
+    </div>
+    
+    <button id="checkout-btn" class="btn" style="width: 100%; padding: 14px;">Finalizar Pedido</button>
   </div>
-  <div id="cart-items" class="cart-items"></div>
-  <div class="cart-total">
-    <strong>Total: <span id="cart-total">0.00</span>€</strong>
-  </div>
-  <button id="checkout-btn" class="btn">Finalizar Pedido</button>
 </div>
-
-<!-- CART OVERLAY -->
-<div id="cart-overlay" class="cart-overlay"></div>
 
 <!-- ORDER CONFIRMATION MODAL -->
 <div id="order-modal" class="modal-overlay hidden">
@@ -81,12 +81,11 @@
     </p>
     <textarea id="item-note" placeholder="Escribe tu nota aquí..." rows="3" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px; font-family:inherit; font-size:1rem; resize:vertical; min-height:60px;"></textarea>
     <div style="display:flex; gap:10px; margin-top:16px;">
-  <button id="skip-note" class="btn">Omitir</button>
-  <button id="save-note" class="btn">Agregar al Pedido</button>
-</div>
+      <button id="skip-note" class="btn">Omitir</button>
+      <button id="save-note" class="btn">Agregar al Pedido</button>
+    </div>
   </div>
 </div>
-
 
 <!-- HERO -->
 <header class="hero">
@@ -241,7 +240,7 @@
       <p>¡Estamos en pleno corazón de Coria del Río!  
          Pasa a disfrutar de los mejores kebabs y durums auténticos.  
          Estacionamiento disponible cerca del local.</p>
-      <a href="https://www.google.com/maps/place/Kebab+Andalucia/@37.2828787,-6.0557999,15z/data=!4m6!3m5!1s0xd1273716c5a9ebf:0x1e7ad509cfa16d70!8m2!3d37.2828787!4d-6.0557999!16s%2Fg%2F11b6l7jw9r?entry=ttu" 
+      <a href="https://www.google.com/maps/place/Kebab+Andalucia/@37.2828787  ,-6.0557999,15z/data=!4m6!3m5!1s0xd1273716c5a9ebf:0x1e7ad509cfa16d70!8m2!3d37.2828787!4d-6.0557999!16s%2Fg%2F11b6l7jw9r?entry=ttu" 
    target="_blank" 
    class="btn map-btn">
   Abrir en Google Maps
@@ -249,7 +248,7 @@
     </div>
     <div class="map-embed">
       <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17957.78005650073!2d-6.055799979659134!3d37.28287874244164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1273716c5a9ebf%3A0x1e7ad509cfa16d70!2sKebab%20Andalucia!5e0!3m2!1ses!2ses!4v1766996316017!5m2!1ses!2ses" 
+        src="https://www.google.com/maps/embed?pb=  !1m18!1m12!1m3!1d17957.78005650073!2d-6.055799979659134!3d37.28287874244164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1273716c5a9ebf%3A0x1e7ad509cfa16d70!2sKebab%20Andalucia!5e0!3m2!1ses!2ses!4v1766996316017!5m2!1ses!2ses" 
         width="100%" 
         height="600" 
         style="border:0;" 
@@ -686,6 +685,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-
-
-
