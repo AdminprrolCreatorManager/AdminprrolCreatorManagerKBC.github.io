@@ -6,8 +6,8 @@ let cart = [];
 
 // DOM Elements
 const cartIcon = document.getElementById('cart-icon');
-const cartSidebar = document.getElementById('cart-sidebar');
-const cartOverlay = document.getElementById('cart-overlay');
+// ❌ Removed: cartSidebar, cartOverlay
+const cartModal = document.getElementById('cart-modal'); // ✅ NEW
 const closeCartBtn = document.getElementById('close-cart');
 const cartItemsContainer = document.getElementById('cart-items');
 const cartTotalElement = document.getElementById('cart-total');
@@ -182,15 +182,15 @@ function updateCartUI() {
   });
 }
 
-// Show/Hide Cart
+// Show/Hide Cart (MODAL VERSION)
 function showCart() {
-  cartSidebar.classList.add('active');
-  cartOverlay.classList.add('active');
+  cartModal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
 }
 
 function hideCart() {
-  cartSidebar.classList.remove('active');
-  cartOverlay.classList.remove('active');
+  cartModal.classList.add('hidden');
+  document.body.style.overflow = '';
 }
 
 // Modal: Show
@@ -307,7 +307,11 @@ function submitOrder() {
 // Event Listeners
 cartIcon.addEventListener('click', showCart);
 closeCartBtn.addEventListener('click', hideCart);
-cartOverlay.addEventListener('click', hideCart);
+
+// ✅ NEW: Close cart modal when clicking background
+cartModal.addEventListener('click', (e) => {
+  if (e.target === cartModal) hideCart();
+});
 
 // Checkout opens modal
 checkoutBtn.addEventListener('click', showOrderModal);
@@ -331,4 +335,3 @@ submitOrderBtn.addEventListener('click', submitOrder);
 
 // Initialize
 updateCartUI();
-
